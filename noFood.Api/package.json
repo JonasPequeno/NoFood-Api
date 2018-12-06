@@ -1,0 +1,14 @@
+{
+  "name": "nofood.api",
+  "version": "1.0.0",
+  "description": "Api feita em nodeJS para ultilização do nosso aplicativo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Pequeno",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
