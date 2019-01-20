@@ -1,34 +1,35 @@
+
 'use strict'
 
 require('../models/produto-model');
-const mongoose = require('mongoose');
-const ProdutoModel = mongoose.model('Produto');
+const base = require('../bin/base/repositor-base');
+
+const modelo = 'Categoria';
 
 class produtoRepository {
-    constructor() {
 
+    constructor() {
+        this._base = new base(modelo);
     }
 
     async create(produto) {
-        let modelo = new ProdutoModel(produto);
-        await modelo.save();
+        return this._base.create(produto);
     }
 
     async getAll() {
-        return await ProdutoModel.find();
+        return await this._base.getAll();
     }
 
     async getById(id) {
-        return await ProdutoModel.findById(id);
+        return await this._base.getById(id);
     }
 
     async update(id, produto) {
-        await ProdutoModel.findByIdAndUpdate(id, { $set: produto });
-        return await ProdutoModel.findById(id);
+        return await this._base.update(id, produto);
     }
 
     async delete(id) {
-        return await ProdutoModel.findByIdAndRemove(id);
+        return await this._base.delete(id);
     }
 }
 
