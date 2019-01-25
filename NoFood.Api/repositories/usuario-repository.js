@@ -1,19 +1,19 @@
 
 'use strict'
 
-require('../models/produto-model');
+require('../models/usuario-model');
 const base = require('../bin/base/repositor-base');
 
-const modelo = 'Produto';
+const modelo = 'Usuario';
 
-class produtoRepository {
+class usuarioRepository {
 
     constructor() {
         this._base = new base(modelo);
     }
 
-    async create(produto) {
-        return this._base.create(produto);
+    async create(usuario) {
+        return this._base.create(usuario);
     }
 
     async getAll() {
@@ -24,8 +24,8 @@ class produtoRepository {
         return await this._base.getById(id);
     }
 
-    async update(id, produto) {
-        return await this._base.update(id, produto);
+    async update(id, usuario) {
+        return await this._base.update(id, usuario);
     }
 
     async delete(id) {
@@ -33,5 +33,5 @@ class produtoRepository {
     }
 }
 
-module.exports = produtoRepository;
+module.exports = usuarioRepository;
 
